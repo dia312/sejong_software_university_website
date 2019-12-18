@@ -1,0 +1,54 @@
+1. 슬라이드 사용 안내
+
+1) 슬라이드의 표시 시간 조절: head.sub.php
+
+- 라인 117의 data-interval="6000"에서 원하는 값으로 설정(단위는 밀리초이며, 따라서 6000은 6초가 됩니다.)
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="6000">
+
+
+2) 버튼 표시 형식 변경: head.sub.php
+
+- 버튼의 배경색을 없애고, 테두리만 보이게 하시려면 btn-primary를 btn-outline-primary로 변경하세요.
+<span class="btn btn-primary btn-sm ">Learn More</span>
+
+
+3) 슬라이드에 사용한 이미지의 높이가 서로 다른 경우, 모바일에서는 이미지의 높이 차이에 따라 슬라이드의 높이가 바뀌는 현상이 생길 수 있으니, 이미지의 높이는 되도록 같게 해주세요.
+
+- 이전에 슬라이드에 사용한 jpg 파일들의 높이가 서로 달라 울렁거리는 현상이 발생하여, 서로의 높이를 동일하게 맞춘 png 파일로 변경했습니다.
+
+
+4) PC 화면에서의 슬라이드의 높이 조절: carousel.css
+
+- height: 32rem;의 수치를 조절하세요.
+
+.carousel-item {
+  height: 32rem;
+  min-height: 200px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+5) 모바일 화면에서의 슬라이드의 높이 및 캡션의 폰트 사이즈 조절: carousel.css
+
+- max-height: 20em의 수치를 조절하세요.(최고 높이이므로 그 이상으로는 늘어나지 않게 제한합니다.)
+
+@media (max-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-item {
+    max-height: 20em;
+  }
+ .carousel-caption p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+  .carousel-caption h3 {
+    font-size: 1.4rem;
+  }
+
+- 폰트 크기는 font-size: 1.1rem;, 행간의 간격은 line-height: 1.2;, 그리고 하단 여백은 margin-bottom: 1.5rem;을 변경하세요.
+0.8, 1, 1.2 등과 같이 설정하시면 됩니다.
